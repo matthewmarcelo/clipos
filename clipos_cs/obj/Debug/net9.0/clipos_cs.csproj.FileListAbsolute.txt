@@ -1,0 +1,15 @@
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\bin\Debug\net9.0\clipos_cs.exe
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\bin\Debug\net9.0\clipos_cs.deps.json
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\bin\Debug\net9.0\clipos_cs.runtimeconfig.json
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\bin\Debug\net9.0\clipos_cs.dll
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\bin\Debug\net9.0\clipos_cs.pdb
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.AssemblyInfoInputs.cache
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.AssemblyInfo.cs
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.csproj.CoreCompileInputs.cache
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.sourcelink.json
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.dll
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\refint\clipos_cs.dll
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.pdb
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\clipos_cs.genruntimeconfig.cache
+C:\Users\Matthew Marcelo\Documents\Github VSCode\comprog2\clipos\clipos_cs\obj\Debug\net9.0\ref\clipos_cs.dll
