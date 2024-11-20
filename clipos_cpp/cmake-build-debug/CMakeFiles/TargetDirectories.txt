@@ -1,0 +1,3 @@
+C:/Users/Matthew Marcelo/Documents/Github VSCode/comprog2/clipos/clipos_cpp/cmake-build-debug/CMakeFiles/clipos_cpp.dir
+C:/Users/Matthew Marcelo/Documents/Github VSCode/comprog2/clipos/clipos_cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Matthew Marcelo/Documents/Github VSCode/comprog2/clipos/clipos_cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
