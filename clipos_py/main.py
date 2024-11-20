@@ -82,6 +82,16 @@ def Inventory():
         except:
             print("Invalid Input")
 
+def AddProduct():
+    print("Add Product")
+    addProductName = input("Product Name: ")
+    addProductQty = int(input("Product Quantity: "))
+    addProductPrice = float(input("Product Price: "))
+    productName.append(addProductName)
+    productQty.append(addProductQty)
+    productPrice.append(addProductPrice)
+    Message("Product added successfully.")
+
 Start()
 
 print("Goodbye!")
