@@ -36,7 +36,113 @@ void InventoryDisplay()
     }
 }
 
+// NEW ORDER
+
+void AddToCart()
+{
+    cout << "Select product ID: ";
+    int selectedProduct;
+    cin >> selectedProduct;
+    cout << "Insert product quantity: ";
+    int quantityInput;
+    cin >> quantityInput;
+    orderIDs.push_back(selectedProduct);
+    orderQty.push_back(quantityInput);
+    Message("Added to cart successfully.");
+}
+
+void DeleteFromCart()
+{
+    cout << "Select cart item ID: ";
+    int selectedID;
+    cin >> selectedID;
+    auto deleteOrderID = orderIDs.begin() + selectedID;
+    orderIDs.erase(deleteOrderID);
+    auto deleteorderQty = orderQty.begin() + selectedID;
+    orderQty.erase(deleteorderQty);
+    Message("Removed from cart successfully.");
+}
+
+void EditCartQuantity()
+{
+    cout << "Select cart item ID: ";
+    int selectedID;
+    cin >> selectedID;
+    cout << "Insert product quantity: ";
+    int quantityInput;
+    cin >> quantityInput;
+    orderQty.at(selectedID) = quantityInput;
+    Message("Edited quantity successfully.");
+}
+
+void SubmitOrder()
+{
+    queueIDs.push_back(orderIDs);
+    queueQty.push_back(orderQty);
+    queueStatus.push_back("Pending");
+    float totalPrice = 0;
+    for (int i = 0; i < orderIDs.size(); i++)
+    {
+        productQty[orderIDs[i]] -= orderQty[i];
+        totalPrice += (productPrice[orderIDs[i]] * orderQty[i]);
+    }
+    queueTotal.push_back(totalPrice);
+    orderIDs.clear();
+    orderQty.clear();
+    Message("Submitted order successfully.");
+}
+
+void NewOrder()
+{
+    bool newLatch = true;
+    while (newLatch)
+    {
+
+        system("cls");
+        cout << "New Order" << endl;
+        cout << "-----------------" << endl;
+        cout << "PRODUCTS" << endl;
+        InventoryDisplay();
+        cout << "\nCART" << endl;
+        cout << "ID\tQTY\tPRICE\tNAME" << endl;
+        for (int i = 0; i < orderIDs.size(); i++)
+        {
+            cout << i << "\t" << orderQty[i] << "\t" << productPrice[orderIDs[i]] << "\t" << productName[orderIDs[i]] << endl;
+        }
+        cout << "[A] Add Item | [E] Edit Item Quantity | [D] Delete Item | [S] Submit Order | [C] Close --> ";
+        try
+        {
+            char inventoryChoice;
+            cin >> inventoryChoice;
+            inventoryChoice = toupper(inventoryChoice);
+            switch (inventoryChoice)
+            {
+                case 'S': SubmitOrder(); break;
+                case 'A': AddToCart(); break;
+                case 'E': EditCartQuantity(); break;
+                case 'D': DeleteFromCart(); break;
+                case 'C': newLatch = false; break;
+                default: cout << "Invalid Input" << endl; break;
+            }
+        }
+        catch(...)
+        {
+            cout << "Invalid Input" << endl;
+            continue;
+        }
+    }
+}
+
 // QUEUE
+
+void CompleteOrder()
+{
+    cout << "Select order ID: ";
+    int selectedOrder;
+    cin >> selectedOrder;
+    queueStatus[(selectedOrder-1)] = "Completed";
+    Message("Order set to Completed.");
+}
 
 void Queue()
 {
@@ -48,7 +154,7 @@ void Queue()
         cout << "-----------------" << endl;
         for (int i = queueIDs.size()-1; i >= 0; i--)
         {
-            cout << "ORDER #" << (i+1) << "[" << queueStatus[i] << "]" << endl;
+            cout << "ORDER #" << (i+1) << " [" << queueStatus[i] << "]" << endl;
             cout << "QTY\tNAME" << endl;
             for (int j = 0; j < queueIDs[i].size(); j++)
             {
@@ -64,7 +170,7 @@ void Queue()
             inventoryChoice = toupper(inventoryChoice);
             switch (inventoryChoice)
             {
-                //case 'D': CompleteOrder(); break;
+                case 'D': CompleteOrder(); break;
                 case 'C': queueLatch = false; break;
                 default: cout << "Invalid Input" << endl; break;
             }
@@ -216,6 +322,41 @@ void Inventory()
     }
 }
 
+void Reports()
+{
+    bool reportsLatch = true;
+    while (reportsLatch)
+    {
+        system("cls");
+        cout << "Reports" << endl;
+        cout << "-----------------" << endl;
+        cout << "Total transactions:\t" << queueIDs.size() << endl;
+        float totalRevenue = 0;
+        for (int i = 0; i < queueTotal.size(); i++)
+        {
+            totalRevenue += queueTotal[i];
+        }
+        cout << "Total revenue:\t" <<currency << totalRevenue << "\n" << endl;
+        cout << "[C] Close --> ";
+        try
+        {
+            char inventoryChoice;
+            cin >> inventoryChoice;
+            inventoryChoice = toupper(inventoryChoice);
+            switch (inventoryChoice)
+            {
+                case 'C': reportsLatch = false; break;
+                default: cout << "Invalid Input" << endl; break;
+            }
+        }
+        catch (...)
+        {
+            cout << "Invalid Input" << endl;
+            continue;
+        }
+    }
+}
+
 void Start()
 {
     bool startLatch = true;
@@ -235,10 +376,10 @@ void Start()
             inventoryChoice = toupper(inventoryChoice);
             switch (inventoryChoice)
             {
-                //case 'A': NewOrder(); break;
+                case 'A': NewOrder(); break;
                 case 'Q': Queue(); break;
                 case 'E': Inventory(); break;
-                //case 'R': Reports(); break;
+                case 'R': Reports(); break;
                 case 'C': startLatch = false; break;
                 default: cout << "Invalid Input" << endl; break;
             }
@@ -266,12 +407,5 @@ int main() {
     sleep(1.5);
     system("cls");
 
-
-    /*vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
-    auto pos = cars.begin() + 2;
-    cars.erase(pos);
-    for (string car : cars) {
-        cout << car << "\n";
-    }
-    return 0;*/
+    return 0;
 }

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Matthew Marcelo/Documents/Github VSCode/comprog2/clipos/clipos_cpp/cmake-build-debug",
-		"source" : "C:/Users/Matthew Marcelo/Documents/Github VSCode/comprog2/clipos/clipos_cpp"
+		"build" : "C:/Users/Student/Desktop/matthewmarcelociit/clipos/clipos_cpp/cmake-build-debug",
+		"source" : "C:/Users/Student/Desktop/matthewmarcelociit/clipos/clipos_cpp"
 	},
 	"version" : 
 	{

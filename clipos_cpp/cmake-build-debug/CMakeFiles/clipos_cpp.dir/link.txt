@@ -1,0 +1,3 @@
+C:\Users\Student\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\clipos_cpp.dir/objects.a
+C:\Users\Student\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\clipos_cpp.dir/objects.a @CMakeFiles\clipos_cpp.dir\objects1.rsp
+C:\Users\Student\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\clipos_cpp.dir/objects.a -Wl,--no-whole-archive -o clipos_cpp.exe -Wl,--out-implib,libclipos_cpp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\clipos_cpp.dir\linkLibs.rsp
